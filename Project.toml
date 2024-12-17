@@ -1,0 +1,7 @@
+name = "FlightPhysics"
+uuid = "f1c377ae-4199-41e8-b956-75735c884997"
+authors = ["Carlos Fernando Baptista <cfd.baptista@gmail.com>"]
+version = "0.1.0-DEV"
+
+[compat]
+julia = "1.11"
