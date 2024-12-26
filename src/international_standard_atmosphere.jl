@@ -82,8 +82,8 @@ end
 Calculate the atmospheric state at a given altitude according to the International Standard Atmosphere (ISA) model.
 
 # Arguments
-- `altitude::Scalar`: The altitude in meters for which the ISA state is to be calculated.
-- `temperature_offset::Scalar`: An optional temperature offset in Kelvin to be added to the calculated temperature. Default is 0.0.
+- `altitude`: The altitude in meters for which the ISA state is to be calculated.
+- `temperature_offset`: An optional temperature offset in Kelvin to be added to the calculated temperature. Default is 0.0.
 
 # Returns
 - `ISAState`: A structure containing the temperature, pressure, and density at the given altitude.
