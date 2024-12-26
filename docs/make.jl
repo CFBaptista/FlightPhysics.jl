@@ -12,12 +12,7 @@ makedocs(;
         edit_link="master",
         assets=String[],
     ),
-    pages=[
-        "Home" => "index.md",
-    ],
+    pages=["Home" => "index.md", "API" => "api.md"],
 )
 
-deploydocs(;
-    repo="github.com/CFBaptista/FlightPhysics.jl",
-    devbranch="master",
-)
+deploydocs(; repo="github.com/CFBaptista/FlightPhysics.jl", devbranch="master")
