@@ -1,5 +1,7 @@
 module FlightPhysics
 
+include("constants.jl")
+
 include("gravitational_acceleration.jl")
 export gravitational_acceleration
 

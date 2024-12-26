@@ -18,7 +18,7 @@ using TestItemRunner
         tolerance
 end
 
-@testitem "Gravitational acceleration at altitude = Earth's mean radius" begin
+@testitem "Gravitational acceleration at altitude equals Earth's mean radius" begin
     # Given
 
     altitude = 6371000.0
