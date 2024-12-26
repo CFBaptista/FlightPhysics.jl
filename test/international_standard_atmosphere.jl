@@ -9,6 +9,7 @@ using TestItemRunner
     expected_pressure = 101325.0
     expected_density = 1.225
     expected_speed_of_sound = 340.294
+    expected_dynamic_viscosity = 1.81206e-5
 
     tolerance = 1e-5
 
@@ -19,6 +20,7 @@ using TestItemRunner
     actual_pressure = state.pressure
     actual_density = state.density
     actual_speed_of_sound = state.speed_of_sound
+    actual_dynamic_viscosity = state.dynamic_viscosity
 
     # Then
 
@@ -26,6 +28,7 @@ using TestItemRunner
     @test actual_pressure ≈ expected_pressure rtol = tolerance
     @test actual_density ≈ expected_density rtol = tolerance
     @test actual_speed_of_sound ≈ expected_speed_of_sound rtol = tolerance
+    @test actual_dynamic_viscosity ≈ expected_dynamic_viscosity rtol = tolerance
 end
 
 @testitem "ISA state at 5500 meters altitude (Troposphere)" begin
@@ -37,6 +40,7 @@ end
     expected_pressure = 50506.8
     expected_density = 0.697106
     expected_speed_of_sound = 318.486
+    expected_dynamic_viscosity = 1.62813e-5
 
     tolerance = 1e-5
 
@@ -47,6 +51,7 @@ end
     actual_pressure = state.pressure
     actual_density = state.density
     actual_speed_of_sound = state.speed_of_sound
+    actual_dynamic_viscosity = state.dynamic_viscosity
 
     # Then
 
@@ -54,6 +59,7 @@ end
     @test actual_pressure ≈ expected_pressure rtol = tolerance
     @test actual_density ≈ expected_density rtol = tolerance
     @test actual_speed_of_sound ≈ expected_speed_of_sound rtol = tolerance
+    @test actual_dynamic_viscosity ≈ expected_dynamic_viscosity rtol = tolerance
 end
 
 @testitem "ISA state at 11000 meters altitude (Tropopause)" begin
@@ -65,6 +71,7 @@ end
     expected_pressure = 22632.1
     expected_density = 0.363918
     expected_speed_of_sound = 295.07
+    expected_dynamic_viscosity = 1.43226e-5
 
     tolerance = 1e-5
 
@@ -75,6 +82,7 @@ end
     actual_pressure = state.pressure
     actual_density = state.density
     actual_speed_of_sound = state.speed_of_sound
+    actual_dynamic_viscosity = state.dynamic_viscosity
 
     # Then
 
@@ -82,6 +90,7 @@ end
     @test actual_pressure ≈ expected_pressure rtol = tolerance
     @test actual_density ≈ expected_density rtol = tolerance
     @test actual_speed_of_sound ≈ expected_speed_of_sound rtol = tolerance
+    @test actual_dynamic_viscosity ≈ expected_dynamic_viscosity rtol = tolerance
 end
 
 @testitem "ISA state at 15500 meters altitude (Tropopause)" begin
@@ -93,6 +102,7 @@ end
     expected_pressure = 11131.4
     expected_density = 0.17899
     expected_speed_of_sound = 295.07
+    expected_dynamic_viscosity = 1.43226e-5
 
     tolerance = 1e-5
 
@@ -103,6 +113,7 @@ end
     actual_pressure = state.pressure
     actual_density = state.density
     actual_speed_of_sound = state.speed_of_sound
+    actual_dynamic_viscosity = state.dynamic_viscosity
 
     # Then
 
@@ -110,6 +121,7 @@ end
     @test actual_pressure ≈ expected_pressure rtol = tolerance
     @test actual_density ≈ expected_density rtol = tolerance
     @test actual_speed_of_sound ≈ expected_speed_of_sound rtol = tolerance
+    @test actual_dynamic_viscosity ≈ expected_dynamic_viscosity rtol = tolerance
 end
 
 @testitem "ISA state at 20000 meters altitude (Stratosphere lower)" begin
@@ -121,6 +133,7 @@ end
     expected_pressure = 5474.89
     expected_density = 0.0880349
     expected_speed_of_sound = 295.07
+    expected_dynamic_viscosity = 1.43226e-5
 
     tolerance = 1e-5
 
@@ -131,6 +144,7 @@ end
     actual_pressure = state.pressure
     actual_density = state.density
     actual_speed_of_sound = state.speed_of_sound
+    actual_dynamic_viscosity = state.dynamic_viscosity
 
     # Then
 
@@ -138,6 +152,7 @@ end
     @test actual_pressure ≈ expected_pressure rtol = tolerance
     @test actual_density ≈ expected_density rtol = tolerance
     @test actual_speed_of_sound ≈ expected_speed_of_sound rtol = tolerance
+    @test actual_dynamic_viscosity ≈ expected_dynamic_viscosity rtol = tolerance
 end
 
 @testitem "ISA state at 26000 meters altitude (Stratosphere lower)" begin
@@ -149,6 +164,7 @@ end
     expected_pressure = 2153.09
     expected_density = 0.0336882
     expected_speed_of_sound = 299.128
+    expected_dynamic_viscosity = 1.46604e-5
 
     tolerance = 1e-5
 
@@ -159,6 +175,7 @@ end
     actual_pressure = state.pressure
     actual_density = state.density
     actual_speed_of_sound = state.speed_of_sound
+    actual_dynamic_viscosity = state.dynamic_viscosity
 
     # Then
 
@@ -166,6 +183,7 @@ end
     @test actual_pressure ≈ expected_pressure rtol = tolerance
     @test actual_density ≈ expected_density rtol = tolerance
     @test actual_speed_of_sound ≈ expected_speed_of_sound rtol = tolerance
+    @test actual_dynamic_viscosity ≈ expected_dynamic_viscosity rtol = tolerance
 end
 
 @testitem "ISA state at 32000 meters altitude (Stratosphere upper)" begin
@@ -177,6 +195,7 @@ end
     expected_pressure = 868.019
     expected_density = 0.0132250
     expected_speed_of_sound = 303.131
+    expected_dynamic_viscosity = 1.49945e-5
 
     tolerance = 1e-5
 
@@ -187,6 +206,7 @@ end
     actual_pressure = state.pressure
     actual_density = state.density
     actual_speed_of_sound = state.speed_of_sound
+    actual_dynamic_viscosity = state.dynamic_viscosity
 
     # Then
 
@@ -194,6 +214,7 @@ end
     @test actual_pressure ≈ expected_pressure rtol = tolerance
     @test actual_density ≈ expected_density rtol = tolerance
     @test actual_speed_of_sound ≈ expected_speed_of_sound rtol = tolerance
+    @test actual_dynamic_viscosity ≈ expected_dynamic_viscosity rtol = tolerance
 end
 
 @testitem "ISA state at 39500 meters altitude (Stratosphere upper)" begin
@@ -205,6 +226,7 @@ end
     expected_pressure = 297.118
     expected_density = 0.00414606
     expected_speed_of_sound = 316.746
+    expected_dynamic_viscosity = 1.6135e-5
 
     tolerance = 1e-5
 
@@ -215,6 +237,7 @@ end
     actual_pressure = state.pressure
     actual_density = state.density
     actual_speed_of_sound = state.speed_of_sound
+    actual_dynamic_viscosity = state.dynamic_viscosity
 
     # Then
 
@@ -222,6 +245,7 @@ end
     @test actual_pressure ≈ expected_pressure rtol = tolerance
     @test actual_density ≈ expected_density rtol = tolerance
     @test actual_speed_of_sound ≈ expected_speed_of_sound rtol = tolerance
+    @test actual_dynamic_viscosity ≈ expected_dynamic_viscosity rtol = tolerance
 end
 
 @testitem "ISA state at 47000 meters altitude (Stratopause)" begin
@@ -233,6 +257,7 @@ end
     expected_pressure = 110.906
     expected_density = 0.00142753
     expected_speed_of_sound = 329.799
+    expected_dynamic_viscosity = 1.72341e-5
 
     tolerance = 1e-5
 
@@ -243,6 +268,7 @@ end
     actual_pressure = state.pressure
     actual_density = state.density
     actual_speed_of_sound = state.speed_of_sound
+    actual_dynamic_viscosity = state.dynamic_viscosity
 
     # Then
 
@@ -250,6 +276,7 @@ end
     @test actual_pressure ≈ expected_pressure rtol = tolerance
     @test actual_density ≈ expected_density rtol = tolerance
     @test actual_speed_of_sound ≈ expected_speed_of_sound rtol = tolerance
+    @test actual_dynamic_viscosity ≈ expected_dynamic_viscosity rtol = tolerance
 end
 
 @testitem "ISA state at 49000 meters altitude (Stratopause)" begin
@@ -261,6 +288,7 @@ end
     expected_pressure = 86.1623
     expected_density = 0.00110904
     expected_speed_of_sound = 329.799
+    expected_dynamic_viscosity = 1.72341e-5
 
     tolerance = 1e-5
 
@@ -271,6 +299,7 @@ end
     actual_pressure = state.pressure
     actual_density = state.density
     actual_speed_of_sound = state.speed_of_sound
+    actual_dynamic_viscosity = state.dynamic_viscosity
 
     # Then
 
@@ -278,6 +307,7 @@ end
     @test actual_pressure ≈ expected_pressure rtol = tolerance
     @test actual_density ≈ expected_density rtol = tolerance
     @test actual_speed_of_sound ≈ expected_speed_of_sound rtol = tolerance
+    @test actual_dynamic_viscosity ≈ expected_dynamic_viscosity rtol = tolerance
 end
 
 @testitem "ISA state at 51000 meters altitude (Mesosphere lower)" begin
@@ -289,6 +319,7 @@ end
     expected_pressure = 66.9389
     expected_density = 0.000861606
     expected_speed_of_sound = 329.799
+    expected_dynamic_viscosity = 1.72341e-5
 
     tolerance = 1e-5
 
@@ -299,6 +330,7 @@ end
     actual_pressure = state.pressure
     actual_density = state.density
     actual_speed_of_sound = state.speed_of_sound
+    actual_dynamic_viscosity = state.dynamic_viscosity
 
     # Then
 
@@ -306,6 +338,7 @@ end
     @test actual_pressure ≈ expected_pressure rtol = tolerance
     @test actual_density ≈ expected_density rtol = tolerance
     @test actual_speed_of_sound ≈ expected_speed_of_sound rtol = tolerance
+    @test actual_dynamic_viscosity ≈ expected_dynamic_viscosity rtol = tolerance
 end
 
 @testitem "ISA state at 61000 meters altitude (Mesosphere lower)" begin
@@ -317,6 +350,7 @@ end
     expected_pressure = 17.6606
     expected_density = 0.000253550
     expected_speed_of_sound = 312.274
+    expected_dynamic_viscosity = 1.57596e-5
 
     tolerance = 1e-5
 
@@ -327,6 +361,7 @@ end
     actual_pressure = state.pressure
     actual_density = state.density
     actual_speed_of_sound = state.speed_of_sound
+    actual_dynamic_viscosity = state.dynamic_viscosity
 
     # Then
 
@@ -334,6 +369,7 @@ end
     @test actual_pressure ≈ expected_pressure rtol = tolerance
     @test actual_density ≈ expected_density rtol = tolerance
     @test actual_speed_of_sound ≈ expected_speed_of_sound rtol = tolerance
+    @test actual_dynamic_viscosity ≈ expected_dynamic_viscosity rtol = tolerance
 end
 
 @testitem "ISA state at 71000 meters altitude (Mesosphere upper)" begin
@@ -345,6 +381,7 @@ end
     expected_pressure = 3.95642
     expected_density = 0.000064211
     expected_speed_of_sound = 293.704
+    expected_dynamic_viscosity = 1.42092e-5
 
     tolerance = 1e-5
 
@@ -355,6 +392,7 @@ end
     actual_pressure = state.pressure
     actual_density = state.density
     actual_speed_of_sound = state.speed_of_sound
+    actual_dynamic_viscosity = state.dynamic_viscosity
 
     # Then
 
@@ -362,6 +400,7 @@ end
     @test actual_pressure ≈ expected_pressure rtol = tolerance
     @test actual_density ≈ expected_density rtol = tolerance
     @test actual_speed_of_sound ≈ expected_speed_of_sound rtol = tolerance
+    @test actual_dynamic_viscosity ≈ expected_dynamic_viscosity rtol = tolerance
 end
 
 @testitem "ISA state at 78500 meters altitude (Mesosphere upper)" begin
@@ -373,6 +412,7 @@ end
     expected_pressure = 1.14786
     expected_density = 0.0000200289
     expected_speed_of_sound = 283.256
+    expected_dynamic_viscosity = 1.33442e-5
 
     tolerance = 1e-5
 
@@ -383,6 +423,7 @@ end
     actual_pressure = state.pressure
     actual_density = state.density
     actual_speed_of_sound = state.speed_of_sound
+    actual_dynamic_viscosity = state.dynamic_viscosity
 
     # Then
 
@@ -390,6 +431,7 @@ end
     @test actual_pressure ≈ expected_pressure rtol = tolerance
     @test actual_density ≈ expected_density rtol = tolerance
     @test actual_speed_of_sound ≈ expected_speed_of_sound rtol = tolerance
+    @test actual_dynamic_viscosity ≈ expected_dynamic_viscosity rtol = tolerance
 end
 
 @testitem "ISA state in a non-isothermal layer with a 25 degrees temperature offset" begin
@@ -402,6 +444,7 @@ end
     expected_pressure = 558.924
     expected_density = 0.0074303
     expected_speed_of_sound = 324.517
+    expected_dynamic_viscosity = 1.67888e-5
 
     tolerance = 1e-5
 
@@ -412,6 +455,7 @@ end
     actual_pressure = state.pressure
     actual_density = state.density
     actual_speed_of_sound = state.speed_of_sound
+    actual_dynamic_viscosity = state.dynamic_viscosity
 
     # Then
 
@@ -419,6 +463,7 @@ end
     @test actual_pressure ≈ expected_pressure rtol = tolerance
     @test actual_density ≈ expected_density rtol = tolerance
     @test actual_speed_of_sound ≈ expected_speed_of_sound rtol = tolerance
+    @test actual_dynamic_viscosity ≈ expected_dynamic_viscosity rtol = tolerance
 end
 
 @testitem "ISA state in an isothermal layer with a 25 degrees temperature offset" begin
@@ -431,6 +476,7 @@ end
     expected_pressure = 75.9448
     expected_density = 0.000894866
     expected_speed_of_sound = 344.694
+    expected_dynamic_viscosity = 1.84928e-5
 
     tolerance = 1e-5
 
@@ -441,6 +487,7 @@ end
     actual_pressure = state.pressure
     actual_density = state.density
     actual_speed_of_sound = state.speed_of_sound
+    actual_dynamic_viscosity = state.dynamic_viscosity
 
     # Then
 
@@ -448,4 +495,5 @@ end
     @test actual_pressure ≈ expected_pressure rtol = tolerance
     @test actual_density ≈ expected_density rtol = tolerance
     @test actual_speed_of_sound ≈ expected_speed_of_sound rtol = tolerance
+    @test actual_dynamic_viscosity ≈ expected_dynamic_viscosity rtol = tolerance
 end

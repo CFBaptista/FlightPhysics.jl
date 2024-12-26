@@ -1,9 +1,16 @@
 const AIR = (
-    gas_constant=8.3144621, specific_gas_constant=287.0528, specific_heat_ratio=1.4
+    gas_constant=8.3144621,
+    specific_gas_constant=287.0528,
+    specific_heat_ratio=1.4,
+    sutherland_constant=120.0,
 )
 
 const MEAN_SEA_LEVEL = (
-    density=1.225, gravity=9.80665, pressure=101325.0, temperature=288.15
+    density=1.225,
+    dynamic_viscosity=1.81206e-5,
+    gravity=9.80665,
+    pressure=101325.0,
+    temperature=288.15,
 )
 
 """
@@ -12,15 +19,16 @@ const MEAN_SEA_LEVEL = (
 A structure representing Earth's atmospheric state according to the International Standard Atmosphere (ISA) model.
 
 # Fields
-- `temperature`: Air temperature.
-- `pressure`: Air pressure.
-- `density`: Air density.
-- `speed_of_sound`: Speed of sound in the air.
+- `temperature`: Air temperature [K].
+- `pressure`: Air pressure [Pa].
+- `density`: Air density [kg/m^3].
+- `speed_of_sound`: Speed of sound in the air [m/s].
+- `dynamic_viscosity`: Dynamic viscosity of the air [Pa s].
 
 # Examples
 ```jldoctest
-julia> using FlightPhysics; state = FlightPhysics.ISAState{Float64}(288.15, 101325.0, 1.225)
-FlightPhysics.ISAState{Float64}(288.15, 101325.0, 1.225)
+julia> using FlightPhysics; state = FlightPhysics.ISAState{Float64}(288.15, 101325.0, 1.225, 340.294, 1.81206e-5)
+FlightPhysics.ISAState{Float64}(288.15, 101325.0, 1.225, 340.294, 1.81206e-5)
 ```
 """
 struct ISAState{Scalar<:AbstractFloat}
@@ -28,6 +36,7 @@ struct ISAState{Scalar<:AbstractFloat}
     pressure::Scalar
     density::Scalar
     speed_of_sound::Scalar
+    dynamic_viscosity::Scalar
 end
 
 struct ISALayerBaseState{Scalar<:AbstractFloat}
@@ -83,7 +92,7 @@ Calculate the atmospheric state at a given altitude according to the Internation
 # Examples
 ```jldoctest
 julia> using FlightPhysics; state = isa_state(10000.0)
-FlightPhysics.ISAState{Float64}(223.14999999999998, 26436.233930953953, 0.4127061186074048)
+FlightPhysics.ISAState{Float64}(223.14999999999998, 26436.233930953953, 0.4127061186074048, 299.46312836140606, 1.468844333610595e-5)
 ```
 """
 function isa_state(
@@ -100,6 +109,9 @@ function isa_altitude_state(
     gravity = Scalar(MEAN_SEA_LEVEL.gravity)
     specific_gas_constant = Scalar(AIR.specific_gas_constant)
     specific_heat_ratio = Scalar(AIR.specific_heat_ratio)
+    sutherland_constant = Scalar(AIR.sutherland_constant)
+    reference_temperature = Scalar(MEAN_SEA_LEVEL.temperature)
+    reference_dynamic_viscosity = Scalar(MEAN_SEA_LEVEL.dynamic_viscosity)
 
     temperature = isa_temperature(altitude, layer_base)
     offsetted_temperature = temperature + temperature_offset
@@ -110,8 +122,16 @@ function isa_altitude_state(
     speed_of_sound = isa_speed_of_sound(
         offsetted_temperature, specific_heat_ratio, specific_gas_constant
     )
+    dynamic_viscosity = isa_dynamic_viscosity(
+        offsetted_temperature,
+        sutherland_constant,
+        reference_temperature,
+        reference_dynamic_viscosity,
+    )
 
-    return ISAState(offsetted_temperature, pressure, density, speed_of_sound)
+    return ISAState(
+        offsetted_temperature, pressure, density, speed_of_sound, dynamic_viscosity
+    )
 end
 
 function isa_temperature(
@@ -154,4 +174,18 @@ function isa_speed_of_sound(
     temperature::Scalar, specific_heat_ratio::Scalar, specific_gas_constant::Scalar
 ) where {Scalar<:AbstractFloat}
     return sqrt(specific_heat_ratio * specific_gas_constant * temperature)
+end
+
+function isa_dynamic_viscosity(
+    temperature::Scalar,
+    sutherland_constant::Scalar,
+    reference_temperature::Scalar,
+    reference_dynamic_viscosity::Scalar,
+) where {Scalar<:AbstractFloat}
+    return reference_dynamic_viscosity *
+           (temperature / reference_temperature)^Scalar(1.5) *
+           (
+               (reference_temperature + sutherland_constant) /
+               (temperature + sutherland_constant)
+           )
 end
