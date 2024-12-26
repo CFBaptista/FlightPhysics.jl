@@ -1,18 +1,3 @@
-const AIR = (
-    gas_constant=8.3144621,
-    specific_gas_constant=287.0528,
-    specific_heat_ratio=1.4,
-    sutherland_constant=120.0,
-)
-
-const MEAN_SEA_LEVEL = (
-    density=1.225,
-    dynamic_viscosity=1.81206e-5,
-    gravity=9.80665,
-    pressure=101325.0,
-    temperature=288.15,
-)
-
 """
     ISAState{Scalar<:AbstractFloat}
 
@@ -80,8 +65,8 @@ end
 Calculate the atmospheric state at a given altitude according to the International Standard Atmosphere (ISA) model.
 
 # Arguments
-- `altitude::Scalar`: The altitude in meters for which the ISA state is to be calculated.
-- `temperature_offset::Scalar`: An optional temperature offset in Kelvin to be added to the calculated temperature. Default is 0.0.
+- `altitude`: The altitude in meters for which the ISA state is to be calculated.
+- `temperature_offset`: An optional temperature offset in Kelvin to be added to the calculated temperature. Default is 0.0.
 
 # Returns
 - `ISAState`: A structure containing the temperature, pressure, and density at the given altitude.
