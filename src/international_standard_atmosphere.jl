@@ -1,4 +1,6 @@
-const AIR = (gas_constant=8.3144621, specific_gas_constant=287.0528)
+const AIR = (
+    gas_constant=8.3144621, specific_gas_constant=287.0528, specific_heat_ratio=1.4
+)
 
 const MEAN_SEA_LEVEL = (
     density=1.225, gravity=9.80665, pressure=101325.0, temperature=288.15
@@ -13,6 +15,7 @@ A structure representing Earth's atmospheric state according to the Internationa
 - `temperature`: Air temperature.
 - `pressure`: Air pressure.
 - `density`: Air density.
+- `speed_of_sound`: Speed of sound in the air.
 
 # Examples
 ```jldoctest
@@ -24,6 +27,7 @@ struct ISAState{Scalar<:AbstractFloat}
     temperature::Scalar
     pressure::Scalar
     density::Scalar
+    speed_of_sound::Scalar
 end
 
 struct ISALayerBaseState{Scalar<:AbstractFloat}
@@ -95,6 +99,7 @@ function isa_altitude_state(
 ) where {Scalar<:AbstractFloat}
     gravity = Scalar(MEAN_SEA_LEVEL.gravity)
     specific_gas_constant = Scalar(AIR.specific_gas_constant)
+    specific_heat_ratio = Scalar(AIR.specific_heat_ratio)
 
     temperature = isa_temperature(altitude, layer_base)
     offsetted_temperature = temperature + temperature_offset
@@ -102,8 +107,11 @@ function isa_altitude_state(
         altitude, temperature, layer_base, gravity, specific_gas_constant
     )
     density = isa_density(offsetted_temperature, pressure, specific_gas_constant)
+    speed_of_sound = isa_speed_of_sound(
+        offsetted_temperature, specific_heat_ratio, specific_gas_constant
+    )
 
-    return ISAState(offsetted_temperature, pressure, density)
+    return ISAState(offsetted_temperature, pressure, density, speed_of_sound)
 end
 
 function isa_temperature(
@@ -140,4 +148,10 @@ function isa_density(
     temperature::Scalar, pressure::Scalar, specific_gas_constant::Scalar
 ) where {Scalar<:AbstractFloat}
     return pressure / (specific_gas_constant * temperature)
+end
+
+function isa_speed_of_sound(
+    temperature::Scalar, specific_heat_ratio::Scalar, specific_gas_constant::Scalar
+) where {Scalar<:AbstractFloat}
+    return sqrt(specific_heat_ratio * specific_gas_constant * temperature)
 end

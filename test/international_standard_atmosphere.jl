@@ -8,6 +8,7 @@ using TestItemRunner
     expected_temperature = 288.15
     expected_pressure = 101325.0
     expected_density = 1.225
+    expected_speed_of_sound = 340.294
 
     tolerance = 1e-5
 
@@ -17,12 +18,14 @@ using TestItemRunner
     actual_temperature = state.temperature
     actual_pressure = state.pressure
     actual_density = state.density
+    actual_speed_of_sound = state.speed_of_sound
 
     # Then
 
     @test actual_temperature ≈ expected_temperature rtol = tolerance
     @test actual_pressure ≈ expected_pressure rtol = tolerance
     @test actual_density ≈ expected_density rtol = tolerance
+    @test actual_speed_of_sound ≈ expected_speed_of_sound rtol = tolerance
 end
 
 @testitem "ISA state at 5500 meters altitude (Troposphere)" begin
@@ -33,6 +36,7 @@ end
     expected_temperature = 252.4
     expected_pressure = 50506.8
     expected_density = 0.697106
+    expected_speed_of_sound = 318.486
 
     tolerance = 1e-5
 
@@ -42,12 +46,14 @@ end
     actual_temperature = state.temperature
     actual_pressure = state.pressure
     actual_density = state.density
+    actual_speed_of_sound = state.speed_of_sound
 
     # Then
 
     @test actual_temperature ≈ expected_temperature rtol = tolerance
     @test actual_pressure ≈ expected_pressure rtol = tolerance
     @test actual_density ≈ expected_density rtol = tolerance
+    @test actual_speed_of_sound ≈ expected_speed_of_sound rtol = tolerance
 end
 
 @testitem "ISA state at 11000 meters altitude (Tropopause)" begin
@@ -58,6 +64,7 @@ end
     expected_temperature = 216.65
     expected_pressure = 22632.1
     expected_density = 0.363918
+    expected_speed_of_sound = 295.07
 
     tolerance = 1e-5
 
@@ -67,12 +74,14 @@ end
     actual_temperature = state.temperature
     actual_pressure = state.pressure
     actual_density = state.density
+    actual_speed_of_sound = state.speed_of_sound
 
     # Then
 
     @test actual_temperature ≈ expected_temperature rtol = tolerance
     @test actual_pressure ≈ expected_pressure rtol = tolerance
     @test actual_density ≈ expected_density rtol = tolerance
+    @test actual_speed_of_sound ≈ expected_speed_of_sound rtol = tolerance
 end
 
 @testitem "ISA state at 15500 meters altitude (Tropopause)" begin
@@ -83,6 +92,7 @@ end
     expected_temperature = 216.65
     expected_pressure = 11131.4
     expected_density = 0.17899
+    expected_speed_of_sound = 295.07
 
     tolerance = 1e-5
 
@@ -92,12 +102,14 @@ end
     actual_temperature = state.temperature
     actual_pressure = state.pressure
     actual_density = state.density
+    actual_speed_of_sound = state.speed_of_sound
 
     # Then
 
     @test actual_temperature ≈ expected_temperature rtol = tolerance
     @test actual_pressure ≈ expected_pressure rtol = tolerance
     @test actual_density ≈ expected_density rtol = tolerance
+    @test actual_speed_of_sound ≈ expected_speed_of_sound rtol = tolerance
 end
 
 @testitem "ISA state at 20000 meters altitude (Stratosphere lower)" begin
@@ -108,6 +120,7 @@ end
     expected_temperature = 216.65
     expected_pressure = 5474.89
     expected_density = 0.0880349
+    expected_speed_of_sound = 295.07
 
     tolerance = 1e-5
 
@@ -117,12 +130,14 @@ end
     actual_temperature = state.temperature
     actual_pressure = state.pressure
     actual_density = state.density
+    actual_speed_of_sound = state.speed_of_sound
 
     # Then
 
     @test actual_temperature ≈ expected_temperature rtol = tolerance
     @test actual_pressure ≈ expected_pressure rtol = tolerance
     @test actual_density ≈ expected_density rtol = tolerance
+    @test actual_speed_of_sound ≈ expected_speed_of_sound rtol = tolerance
 end
 
 @testitem "ISA state at 26000 meters altitude (Stratosphere lower)" begin
@@ -133,6 +148,7 @@ end
     expected_temperature = 222.65
     expected_pressure = 2153.09
     expected_density = 0.0336882
+    expected_speed_of_sound = 299.128
 
     tolerance = 1e-5
 
@@ -142,12 +158,14 @@ end
     actual_temperature = state.temperature
     actual_pressure = state.pressure
     actual_density = state.density
+    actual_speed_of_sound = state.speed_of_sound
 
     # Then
 
     @test actual_temperature ≈ expected_temperature rtol = tolerance
     @test actual_pressure ≈ expected_pressure rtol = tolerance
     @test actual_density ≈ expected_density rtol = tolerance
+    @test actual_speed_of_sound ≈ expected_speed_of_sound rtol = tolerance
 end
 
 @testitem "ISA state at 32000 meters altitude (Stratosphere upper)" begin
@@ -158,6 +176,7 @@ end
     expected_temperature = 228.65
     expected_pressure = 868.019
     expected_density = 0.0132250
+    expected_speed_of_sound = 303.131
 
     tolerance = 1e-5
 
@@ -167,12 +186,14 @@ end
     actual_temperature = state.temperature
     actual_pressure = state.pressure
     actual_density = state.density
+    actual_speed_of_sound = state.speed_of_sound
 
     # Then
 
     @test actual_temperature ≈ expected_temperature rtol = tolerance
     @test actual_pressure ≈ expected_pressure rtol = tolerance
     @test actual_density ≈ expected_density rtol = tolerance
+    @test actual_speed_of_sound ≈ expected_speed_of_sound rtol = tolerance
 end
 
 @testitem "ISA state at 39500 meters altitude (Stratosphere upper)" begin
@@ -183,6 +204,7 @@ end
     expected_temperature = 249.65
     expected_pressure = 297.118
     expected_density = 0.00414606
+    expected_speed_of_sound = 316.746
 
     tolerance = 1e-5
 
@@ -192,12 +214,14 @@ end
     actual_temperature = state.temperature
     actual_pressure = state.pressure
     actual_density = state.density
+    actual_speed_of_sound = state.speed_of_sound
 
     # Then
 
     @test actual_temperature ≈ expected_temperature rtol = tolerance
     @test actual_pressure ≈ expected_pressure rtol = tolerance
     @test actual_density ≈ expected_density rtol = tolerance
+    @test actual_speed_of_sound ≈ expected_speed_of_sound rtol = tolerance
 end
 
 @testitem "ISA state at 47000 meters altitude (Stratopause)" begin
@@ -208,6 +232,7 @@ end
     expected_temperature = 270.65
     expected_pressure = 110.906
     expected_density = 0.00142753
+    expected_speed_of_sound = 329.799
 
     tolerance = 1e-5
 
@@ -217,12 +242,14 @@ end
     actual_temperature = state.temperature
     actual_pressure = state.pressure
     actual_density = state.density
+    actual_speed_of_sound = state.speed_of_sound
 
     # Then
 
     @test actual_temperature ≈ expected_temperature rtol = tolerance
     @test actual_pressure ≈ expected_pressure rtol = tolerance
     @test actual_density ≈ expected_density rtol = tolerance
+    @test actual_speed_of_sound ≈ expected_speed_of_sound rtol = tolerance
 end
 
 @testitem "ISA state at 49000 meters altitude (Stratopause)" begin
@@ -233,6 +260,7 @@ end
     expected_temperature = 270.65
     expected_pressure = 86.1623
     expected_density = 0.00110904
+    expected_speed_of_sound = 329.799
 
     tolerance = 1e-5
 
@@ -242,12 +270,14 @@ end
     actual_temperature = state.temperature
     actual_pressure = state.pressure
     actual_density = state.density
+    actual_speed_of_sound = state.speed_of_sound
 
     # Then
 
     @test actual_temperature ≈ expected_temperature rtol = tolerance
     @test actual_pressure ≈ expected_pressure rtol = tolerance
     @test actual_density ≈ expected_density rtol = tolerance
+    @test actual_speed_of_sound ≈ expected_speed_of_sound rtol = tolerance
 end
 
 @testitem "ISA state at 51000 meters altitude (Mesosphere lower)" begin
@@ -258,6 +288,7 @@ end
     expected_temperature = 270.65
     expected_pressure = 66.9389
     expected_density = 0.000861606
+    expected_speed_of_sound = 329.799
 
     tolerance = 1e-5
 
@@ -267,12 +298,14 @@ end
     actual_temperature = state.temperature
     actual_pressure = state.pressure
     actual_density = state.density
+    actual_speed_of_sound = state.speed_of_sound
 
     # Then
 
     @test actual_temperature ≈ expected_temperature rtol = tolerance
     @test actual_pressure ≈ expected_pressure rtol = tolerance
     @test actual_density ≈ expected_density rtol = tolerance
+    @test actual_speed_of_sound ≈ expected_speed_of_sound rtol = tolerance
 end
 
 @testitem "ISA state at 61000 meters altitude (Mesosphere lower)" begin
@@ -283,6 +316,7 @@ end
     expected_temperature = 242.65
     expected_pressure = 17.6606
     expected_density = 0.000253550
+    expected_speed_of_sound = 312.274
 
     tolerance = 1e-5
 
@@ -292,12 +326,14 @@ end
     actual_temperature = state.temperature
     actual_pressure = state.pressure
     actual_density = state.density
+    actual_speed_of_sound = state.speed_of_sound
 
     # Then
 
     @test actual_temperature ≈ expected_temperature rtol = tolerance
     @test actual_pressure ≈ expected_pressure rtol = tolerance
     @test actual_density ≈ expected_density rtol = tolerance
+    @test actual_speed_of_sound ≈ expected_speed_of_sound rtol = tolerance
 end
 
 @testitem "ISA state at 71000 meters altitude (Mesosphere upper)" begin
@@ -308,6 +344,7 @@ end
     expected_temperature = 214.65
     expected_pressure = 3.95642
     expected_density = 0.000064211
+    expected_speed_of_sound = 293.704
 
     tolerance = 1e-5
 
@@ -317,12 +354,14 @@ end
     actual_temperature = state.temperature
     actual_pressure = state.pressure
     actual_density = state.density
+    actual_speed_of_sound = state.speed_of_sound
 
     # Then
 
     @test actual_temperature ≈ expected_temperature rtol = tolerance
     @test actual_pressure ≈ expected_pressure rtol = tolerance
     @test actual_density ≈ expected_density rtol = tolerance
+    @test actual_speed_of_sound ≈ expected_speed_of_sound rtol = tolerance
 end
 
 @testitem "ISA state at 78500 meters altitude (Mesosphere upper)" begin
@@ -333,6 +372,7 @@ end
     expected_temperature = 199.65
     expected_pressure = 1.14786
     expected_density = 0.0000200289
+    expected_speed_of_sound = 283.256
 
     tolerance = 1e-5
 
@@ -342,12 +382,14 @@ end
     actual_temperature = state.temperature
     actual_pressure = state.pressure
     actual_density = state.density
+    actual_speed_of_sound = state.speed_of_sound
 
     # Then
 
     @test actual_temperature ≈ expected_temperature rtol = tolerance
     @test actual_pressure ≈ expected_pressure rtol = tolerance
     @test actual_density ≈ expected_density rtol = tolerance
+    @test actual_speed_of_sound ≈ expected_speed_of_sound rtol = tolerance
 end
 
 @testitem "ISA state in a non-isothermal layer with a 25 degrees temperature offset" begin
@@ -359,6 +401,7 @@ end
     expected_temperature = 262.05
     expected_pressure = 558.924
     expected_density = 0.0074303
+    expected_speed_of_sound = 324.517
 
     tolerance = 1e-5
 
@@ -368,12 +411,14 @@ end
     actual_temperature = state.temperature
     actual_pressure = state.pressure
     actual_density = state.density
+    actual_speed_of_sound = state.speed_of_sound
 
     # Then
 
     @test actual_temperature ≈ expected_temperature rtol = tolerance
     @test actual_pressure ≈ expected_pressure rtol = tolerance
     @test actual_density ≈ expected_density rtol = tolerance
+    @test actual_speed_of_sound ≈ expected_speed_of_sound rtol = tolerance
 end
 
 @testitem "ISA state in an isothermal layer with a 25 degrees temperature offset" begin
@@ -385,6 +430,7 @@ end
     expected_temperature = 295.65
     expected_pressure = 75.9448
     expected_density = 0.000894866
+    expected_speed_of_sound = 344.694
 
     tolerance = 1e-5
 
@@ -394,10 +440,12 @@ end
     actual_temperature = state.temperature
     actual_pressure = state.pressure
     actual_density = state.density
+    actual_speed_of_sound = state.speed_of_sound
 
     # Then
 
     @test actual_temperature ≈ expected_temperature rtol = tolerance
     @test actual_pressure ≈ expected_pressure rtol = tolerance
     @test actual_density ≈ expected_density rtol = tolerance
+    @test actual_speed_of_sound ≈ expected_speed_of_sound rtol = tolerance
 end
