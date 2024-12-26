@@ -1,4 +1,5 @@
 using Aqua
+using Documenter
 using FlightPhysics
 using JET
 using Test
@@ -11,6 +12,10 @@ using TestItemRunner
 
     @testset "Code linting (JET.jl)" begin
         JET.test_package(FlightPhysics; target_defined_modules = true)
+    end
+
+    @testset "Documentation" begin
+        doctest(FlightPhysics)
     end
 end
 

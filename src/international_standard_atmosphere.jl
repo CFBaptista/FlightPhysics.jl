@@ -10,6 +10,22 @@ const MEAN_SEA_LEVEL = (
     temperature = 288.15
 )
 
+"""
+    ISAState{Scalar<:AbstractFloat}
+
+A structure representing Earth's atmospheric state according to the International Standard Atmosphere (ISA) model.
+
+# Fields
+- `temperature`: Air temperature.
+- `pressure`: Air pressure.
+- `density`: Air density.
+
+# Examples
+```jldoctest
+julia> using FlightPhysics; state = FlightPhysics.ISAState{Float64}(288.15, 101325.0, 1.225)
+FlightPhysics.ISAState{Float64}(288.15, 101325.0, 1.225)
+```
+"""
 struct ISAState{Scalar<:AbstractFloat}
     temperature::Scalar
     pressure::Scalar
@@ -46,6 +62,27 @@ function isa_layer_base_state(altitude::AbstractFloat)
     end
 end
 
+"""
+    isa_state(altitude::Scalar; temperature_offset::Scalar=0.0) -> ISAState
+
+Calculate the atmospheric state at a given altitude according to the International Standard Atmosphere (ISA) model.
+
+# Arguments
+- `altitude::Scalar`: The altitude in meters for which the ISA state is to be calculated.
+- `temperature_offset::Scalar`: An optional temperature offset in Kelvin to be added to the calculated temperature. Default is 0.0.
+
+# Returns
+- `ISAState`: A structure containing the temperature, pressure, and density at the given altitude.
+
+# Throws
+- `DomainError`: If the altitude is out of the range covered by the ISA model (0 to 86000 meters).
+
+# Examples
+```jldoctest
+julia> using FlightPhysics; state = isa_state(10000.0)
+FlightPhysics.ISAState{Float64}(223.14999999999998, 26436.233930953953, 0.4127061186074048)
+```
+"""
 function isa_state(
     altitude::Scalar;
     temperature_offset::Scalar=0.0
@@ -60,8 +97,8 @@ function isa_altitude_state(
     temperature_offset::Scalar,
     layer_base::ISALayerBaseState{Scalar}
 ) where {Scalar <: AbstractFloat}
-    gravity = typeof(altitude)(MEAN_SEA_LEVEL.gravity)
-    specific_gas_constant = typeof(altitude)(AIR.specific_gas_constant)
+    gravity = Scalar(MEAN_SEA_LEVEL.gravity)
+    specific_gas_constant = Scalar(AIR.specific_gas_constant)
 
     temperature = isa_temperature(altitude, layer_base)
     offsetted_temperature = temperature + temperature_offset
