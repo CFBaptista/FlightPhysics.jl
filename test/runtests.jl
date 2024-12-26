@@ -20,5 +20,6 @@ using TestItemRunner
 end
 
 include("international_standard_atmosphere.jl")
+include("gravitational_acceleration.jl")
 
 @run_package_tests

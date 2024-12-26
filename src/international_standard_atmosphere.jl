@@ -5,6 +5,8 @@ const AIR = (
     sutherland_constant=120.0,
 )
 
+const EARTH = (mean_radius=6371000.0,)
+
 const MEAN_SEA_LEVEL = (
     density=1.225,
     dynamic_viscosity=1.81206e-5,
