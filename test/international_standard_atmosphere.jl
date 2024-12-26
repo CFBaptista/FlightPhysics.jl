@@ -20,9 +20,9 @@ using TestItemRunner
 
     # Then
 
-    @test actual_temperature ≈ expected_temperature  rtol=tolerance
-    @test actual_pressure ≈ expected_pressure rtol=tolerance
-    @test actual_density ≈ expected_density rtol=tolerance
+    @test actual_temperature ≈ expected_temperature rtol = tolerance
+    @test actual_pressure ≈ expected_pressure rtol = tolerance
+    @test actual_density ≈ expected_density rtol = tolerance
 end
 
 @testitem "ISA state at 5500 meters altitude (Troposphere)" begin
@@ -45,9 +45,9 @@ end
 
     # Then
 
-    @test actual_temperature ≈ expected_temperature rtol=tolerance
-    @test actual_pressure ≈ expected_pressure rtol=tolerance
-    @test actual_density ≈ expected_density rtol=tolerance
+    @test actual_temperature ≈ expected_temperature rtol = tolerance
+    @test actual_pressure ≈ expected_pressure rtol = tolerance
+    @test actual_density ≈ expected_density rtol = tolerance
 end
 
 @testitem "ISA state at 11000 meters altitude (Tropopause)" begin
@@ -70,9 +70,9 @@ end
 
     # Then
 
-    @test actual_temperature ≈ expected_temperature rtol=tolerance
-    @test actual_pressure ≈ expected_pressure rtol=tolerance
-    @test actual_density ≈ expected_density rtol=tolerance
+    @test actual_temperature ≈ expected_temperature rtol = tolerance
+    @test actual_pressure ≈ expected_pressure rtol = tolerance
+    @test actual_density ≈ expected_density rtol = tolerance
 end
 
 @testitem "ISA state at 15500 meters altitude (Tropopause)" begin
@@ -95,9 +95,9 @@ end
 
     # Then
 
-    @test actual_temperature ≈ expected_temperature rtol=tolerance
-    @test actual_pressure ≈ expected_pressure rtol=tolerance
-    @test actual_density ≈ expected_density rtol=tolerance
+    @test actual_temperature ≈ expected_temperature rtol = tolerance
+    @test actual_pressure ≈ expected_pressure rtol = tolerance
+    @test actual_density ≈ expected_density rtol = tolerance
 end
 
 @testitem "ISA state at 20000 meters altitude (Stratosphere lower)" begin
@@ -120,9 +120,9 @@ end
 
     # Then
 
-    @test actual_temperature ≈ expected_temperature rtol=tolerance
-    @test actual_pressure ≈ expected_pressure rtol=tolerance
-    @test actual_density ≈ expected_density rtol=tolerance
+    @test actual_temperature ≈ expected_temperature rtol = tolerance
+    @test actual_pressure ≈ expected_pressure rtol = tolerance
+    @test actual_density ≈ expected_density rtol = tolerance
 end
 
 @testitem "ISA state at 26000 meters altitude (Stratosphere lower)" begin
@@ -145,9 +145,9 @@ end
 
     # Then
 
-    @test actual_temperature ≈ expected_temperature rtol=tolerance
-    @test actual_pressure ≈ expected_pressure rtol=tolerance
-    @test actual_density ≈ expected_density rtol=tolerance
+    @test actual_temperature ≈ expected_temperature rtol = tolerance
+    @test actual_pressure ≈ expected_pressure rtol = tolerance
+    @test actual_density ≈ expected_density rtol = tolerance
 end
 
 @testitem "ISA state at 32000 meters altitude (Stratosphere upper)" begin
@@ -170,9 +170,9 @@ end
 
     # Then
 
-    @test actual_temperature ≈ expected_temperature rtol=tolerance
-    @test actual_pressure ≈ expected_pressure rtol=tolerance
-    @test actual_density ≈ expected_density rtol=tolerance
+    @test actual_temperature ≈ expected_temperature rtol = tolerance
+    @test actual_pressure ≈ expected_pressure rtol = tolerance
+    @test actual_density ≈ expected_density rtol = tolerance
 end
 
 @testitem "ISA state at 39500 meters altitude (Stratosphere upper)" begin
@@ -195,9 +195,9 @@ end
 
     # Then
 
-    @test actual_temperature ≈ expected_temperature rtol=tolerance
-    @test actual_pressure ≈ expected_pressure rtol=tolerance
-    @test actual_density ≈ expected_density rtol=tolerance
+    @test actual_temperature ≈ expected_temperature rtol = tolerance
+    @test actual_pressure ≈ expected_pressure rtol = tolerance
+    @test actual_density ≈ expected_density rtol = tolerance
 end
 
 @testitem "ISA state at 47000 meters altitude (Stratopause)" begin
@@ -220,9 +220,9 @@ end
 
     # Then
 
-    @test actual_temperature ≈ expected_temperature rtol=tolerance
-    @test actual_pressure ≈ expected_pressure rtol=tolerance
-    @test actual_density ≈ expected_density rtol=tolerance
+    @test actual_temperature ≈ expected_temperature rtol = tolerance
+    @test actual_pressure ≈ expected_pressure rtol = tolerance
+    @test actual_density ≈ expected_density rtol = tolerance
 end
 
 @testitem "ISA state at 49000 meters altitude (Stratopause)" begin
@@ -245,9 +245,9 @@ end
 
     # Then
 
-    @test actual_temperature ≈ expected_temperature rtol=tolerance
-    @test actual_pressure ≈ expected_pressure rtol=tolerance
-    @test actual_density ≈ expected_density rtol=tolerance
+    @test actual_temperature ≈ expected_temperature rtol = tolerance
+    @test actual_pressure ≈ expected_pressure rtol = tolerance
+    @test actual_density ≈ expected_density rtol = tolerance
 end
 
 @testitem "ISA state at 51000 meters altitude (Mesosphere lower)" begin
@@ -270,9 +270,9 @@ end
 
     # Then
 
-    @test actual_temperature ≈ expected_temperature rtol=tolerance
-    @test actual_pressure ≈ expected_pressure rtol=tolerance
-    @test actual_density ≈ expected_density rtol=tolerance
+    @test actual_temperature ≈ expected_temperature rtol = tolerance
+    @test actual_pressure ≈ expected_pressure rtol = tolerance
+    @test actual_density ≈ expected_density rtol = tolerance
 end
 
 @testitem "ISA state at 61000 meters altitude (Mesosphere lower)" begin
@@ -295,9 +295,9 @@ end
 
     # Then
 
-    @test actual_temperature ≈ expected_temperature rtol=tolerance
-    @test actual_pressure ≈ expected_pressure rtol=tolerance
-    @test actual_density ≈ expected_density rtol=tolerance
+    @test actual_temperature ≈ expected_temperature rtol = tolerance
+    @test actual_pressure ≈ expected_pressure rtol = tolerance
+    @test actual_density ≈ expected_density rtol = tolerance
 end
 
 @testitem "ISA state at 71000 meters altitude (Mesosphere upper)" begin
@@ -320,9 +320,9 @@ end
 
     # Then
 
-    @test actual_temperature ≈ expected_temperature rtol=tolerance
-    @test actual_pressure ≈ expected_pressure rtol=tolerance
-    @test actual_density ≈ expected_density rtol=tolerance
+    @test actual_temperature ≈ expected_temperature rtol = tolerance
+    @test actual_pressure ≈ expected_pressure rtol = tolerance
+    @test actual_density ≈ expected_density rtol = tolerance
 end
 
 @testitem "ISA state at 78500 meters altitude (Mesosphere upper)" begin
@@ -345,9 +345,9 @@ end
 
     # Then
 
-    @test actual_temperature ≈ expected_temperature rtol=tolerance
-    @test actual_pressure ≈ expected_pressure rtol=tolerance
-    @test actual_density ≈ expected_density rtol=tolerance
+    @test actual_temperature ≈ expected_temperature rtol = tolerance
+    @test actual_pressure ≈ expected_pressure rtol = tolerance
+    @test actual_density ≈ expected_density rtol = tolerance
 end
 
 @testitem "ISA state in a non-isothermal layer with a 25 degrees temperature offset" begin
@@ -371,9 +371,9 @@ end
 
     # Then
 
-    @test actual_temperature ≈ expected_temperature rtol=tolerance
-    @test actual_pressure ≈ expected_pressure rtol=tolerance
-    @test actual_density ≈ expected_density rtol=tolerance
+    @test actual_temperature ≈ expected_temperature rtol = tolerance
+    @test actual_pressure ≈ expected_pressure rtol = tolerance
+    @test actual_density ≈ expected_density rtol = tolerance
 end
 
 @testitem "ISA state in an isothermal layer with a 25 degrees temperature offset" begin
@@ -397,7 +397,7 @@ end
 
     # Then
 
-    @test actual_temperature ≈ expected_temperature rtol=tolerance
-    @test actual_pressure ≈ expected_pressure rtol=tolerance
-    @test actual_density ≈ expected_density rtol=tolerance
+    @test actual_temperature ≈ expected_temperature rtol = tolerance
+    @test actual_pressure ≈ expected_pressure rtol = tolerance
+    @test actual_density ≈ expected_density rtol = tolerance
 end

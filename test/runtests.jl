@@ -11,14 +11,13 @@ using TestItemRunner
     end
 
     @testset "Code linting (JET.jl)" begin
-        JET.test_package(FlightPhysics; target_defined_modules = true)
+        JET.test_package(FlightPhysics; target_defined_modules=true)
     end
 
     @testset "Documentation" begin
         doctest(FlightPhysics)
     end
 end
-
 
 include("international_standard_atmosphere.jl")
 
