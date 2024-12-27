@@ -14,12 +14,13 @@ using TestItemRunner
         JET.test_package(FlightPhysics; target_defined_modules=true)
     end
 
-    @testset "Documentation" begin
+    @testset "Documentation (Documenter.jl)" begin
         doctest(FlightPhysics)
     end
 end
 
 include("international_standard_atmosphere.jl")
 include("gravitational_acceleration.jl")
+include("altitude.jl")
 
 @run_package_tests
