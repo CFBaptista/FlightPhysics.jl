@@ -9,4 +9,7 @@ include("international_standard_atmosphere.jl")
 export isa_state
 public ISAState
 
+include("altitude.jl")
+export geopotential_to_geometric_altitude
+
 end

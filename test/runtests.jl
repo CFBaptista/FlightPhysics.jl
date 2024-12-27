@@ -21,5 +21,6 @@ end
 
 include("international_standard_atmosphere.jl")
 include("gravitational_acceleration.jl")
+include("altitude.jl")
 
 @run_package_tests
