@@ -14,7 +14,7 @@ using TestItemRunner
         JET.test_package(FlightPhysics; target_defined_modules=true)
     end
 
-    @testset "Documentation" begin
+    @testset "Documentation (Documenter.jl)" begin
         doctest(FlightPhysics)
     end
 end
